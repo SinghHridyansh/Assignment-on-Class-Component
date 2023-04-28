@@ -1,13 +1,18 @@
 import Counter from "./ClassCounter/ClassCounter";
 import LandingPage from "./Netflix-LandingPage/Netflix-LandingPage";
+import Home from "./Home";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      {/* <LandingPage /> */}
-      <Counter />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="Counter" element={<Counter />} />
+        <Route path="Landingpage" element={<LandingPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
